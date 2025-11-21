@@ -6,3 +6,28 @@
   REPOSITORY: https://github.com/NelMatrix743/qr_code_generator_web_app.git
 */
 
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'consolas', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #262a2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+}
+
+.main-container {
+  width: 400px;
+  padding: 25px 35px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); */
+  background: #ffffff;
+  border-radius: 10px;
+}
