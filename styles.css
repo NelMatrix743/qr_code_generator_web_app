@@ -83,3 +83,19 @@ body {
   cursor: pointer;
   font-weight: 600;
 }
+
+/* implment style for click event */
+
+.generate-btn:active {
+  border: none;
+  outline: none;
+  background: #ffffff;
+  color: #494eea;
+}
+
+.download-btn:active {
+  border: none;
+  outline: none;
+  background: #494eea;
+  color: #ffffff;
+}
