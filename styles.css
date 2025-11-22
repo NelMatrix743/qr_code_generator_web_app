@@ -74,6 +74,7 @@ body {
 }
 
 .download-btn {
+  display: none;  /* ivinsible until qrcode is generated */
   width: 100%;
   height: 30px;
   border: 2px solid #494eea;
