@@ -31,3 +31,25 @@ body {
   background: #ffffff;
   border-radius: 10px;
 }
+
+.p-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.p-container p {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.input-fld {
+  width: 100%;
+  height: 40px;
+  border: 2px solid #494eea;
+  outline: 0;
+  padding: 15px;
+  font-size: 15px;
+  margin: 10px 0 20px;
+  border-radius: 50px;
+}
