@@ -10,6 +10,7 @@ let inputContent = document.getElementById("user-input");
 let qrCodeImage = document.getElementById("qr-display");
 let generateBtn = document.querySelector(".generate-btn");
 let downloadBtn = document.querySelector(".download-btn");
+let imageContainer = document.querySelector(".img-container");
 
 
 let BASE_API_URL = "https://api.qrserver.com/v1/create-qr-code/"
@@ -53,6 +54,14 @@ let QR_CODE_DATA = "";
 // implment event listeners
 generateBtn.addEventListener("click", async () => {
     QR_CODE_DATA = encodeURIComponent(inputContent.value);
+    if(!QR_CODE_DATA){
+        alert("Error! You have to enter a text or url!")
+        return;
+    }
     let qrCodeBlobResult = await generateQRCode(QR_CODE_SIZE, QR_CODE_DATA);
     qrCodeImage.src = URL.createObjectURL(qrCodeBlobResult);
+
+    // enable image viewer and download button
+    imageContainer.style.display = "flex";
+    downloadBtn.style.display = "inline";
 });
