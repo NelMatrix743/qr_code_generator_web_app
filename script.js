@@ -20,3 +20,26 @@ async function generateQRCode(qrcode_size, qrcode_data){
     const response = await fetch(FULL_API_URL);
     return await response.blob();
 }
+
+async function downloadQRCode(qrcode_blob){
+    try { 
+        const fileHandle = await window.showSaveFilePicker({
+            suggestedName: "qrcode.png",
+            types: [
+                {
+                    description: "PNG Image",
+                    accept: { "image/png": [".png"]}
+                }
+            ]
+        });
+        const writable = await fileHandle.createWritable();
+        await writable.write(qrcode_blob);
+        await writable.close();
+    } catch (error){
+        if(error.name !== "AbortError"){
+            console.error(error);
+            alert("Failed to download file.");
+        }
+    } 
+}
+
