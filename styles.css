@@ -100,3 +100,12 @@ body {
   background: #494eea;
   color: #ffffff;
 }
+
+.img-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border: 1px solid #494eea;
+}
