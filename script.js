@@ -50,6 +50,8 @@ async function downloadQRCode(qrcode_blob){
 let QR_CODE_SIZE = "200x200";
 let QR_CODE_DATA = "";
 
+let qrCodeBlobResult;
+
 
 // implment event listeners
 generateBtn.addEventListener("click", async () => {
@@ -58,7 +60,7 @@ generateBtn.addEventListener("click", async () => {
         alert("Error! You have to enter a text or url!")
         return;
     }
-    let qrCodeBlobResult = await generateQRCode(QR_CODE_SIZE, QR_CODE_DATA);
+    qrCodeBlobResult = await generateQRCode(QR_CODE_SIZE, QR_CODE_DATA);
     if(qrCodeBlobResult){
         qrCodeImage.src = URL.createObjectURL(qrCodeBlobResult);
         // enable image viewer and download button
@@ -67,5 +69,9 @@ generateBtn.addEventListener("click", async () => {
     } else {
         alert("Error! QR Code could not be generated.")
     }
+});
+
+downloadBtn.addEventListener("click", () => {
+    downloadQRCode(qrCodeBlobResult);
 });
 
