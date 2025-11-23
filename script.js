@@ -59,9 +59,13 @@ generateBtn.addEventListener("click", async () => {
         return;
     }
     let qrCodeBlobResult = await generateQRCode(QR_CODE_SIZE, QR_CODE_DATA);
-    qrCodeImage.src = URL.createObjectURL(qrCodeBlobResult);
-
-    // enable image viewer and download button
-    imageContainer.style.display = "flex";
-    downloadBtn.style.display = "inline";
+    if(qrCodeBlobResult){
+        qrCodeImage.src = URL.createObjectURL(qrCodeBlobResult);
+        // enable image viewer and download button
+        imageContainer.style.display = "flex";
+        downloadBtn.style.display = "inline";
+    } else {
+        alert("Error! QR Code could not be generated.")
+    }
 });
+
