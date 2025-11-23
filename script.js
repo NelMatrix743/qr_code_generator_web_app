@@ -46,7 +46,7 @@ async function downloadQRCode(qrcode_blob){
 
 
 // main entry point
-let QR_CODE_SIZE = "150x150";
+let QR_CODE_SIZE = "200x200";
 let QR_CODE_DATA = "";
 
 
