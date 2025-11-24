@@ -75,3 +75,9 @@ downloadBtn.addEventListener("click", () => {
     downloadQRCode(qrCodeBlobResult);
 });
 
+inputContent.addEventListener("input", () => {
+    if(inputContent.value.trim() === ""){
+       imageContainer.style.display = "none";
+       downloadBtn.style.display = "none"; 
+    }
+});
