@@ -18,7 +18,6 @@ let BASE_API_URL = "https://api.qrserver.com/v1/create-qr-code/"
 
 async function generateQRCode(qrcode_size, qrcode_data){
     let FULL_API_URL = BASE_API_URL + "?size=" + qrcode_size + "&data=" + qrcode_data;
-    console.log(FULL_API_URL);
     const response = await fetch(FULL_API_URL);
     return await response.blob();
 }
